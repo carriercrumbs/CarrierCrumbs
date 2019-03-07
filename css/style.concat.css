@@ -477,14 +477,17 @@ body {
   background-position: top;
   background-size: cover;
   padding: 6rem 0; }
+  @media only screen and (max-width: 56.25em) {
+    .about-box {
+      background-attachment: scroll; } }
   .about-box__boxes {
     text-align: center;
     background-color: #F7EA88;
     color: #000;
-    opacity: 0;
     padding: 4rem 2rem;
     border-radius: 3px;
-    transition: all .3s; }
+    transition: all .3s;
+    opacity: 1; }
     .about-box__boxes:hover {
       transform: translateY(-0.4rem); }
     .about-box__boxes--title {

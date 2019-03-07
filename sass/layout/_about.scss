@@ -47,6 +47,10 @@
     background-size: cover;
     padding: 6rem 0;
 
+    @include respond(tablet-portrait) {
+        background-attachment: scroll;
+    }
+
     &__boxes {
         text-align: center;
         background-color: $primary-color-light;
@@ -54,6 +58,8 @@
         padding: 4rem 2rem; 
         border-radius: 3px;
         transition: all .3s;
+        // opacity here
+        opacity: 1;
 
         &:hover {
             transform: translateY(-.4rem);

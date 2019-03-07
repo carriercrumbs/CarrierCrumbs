@@ -82,15 +82,15 @@ document.addEventListener("DOMContentLoaded", function() {
             // Box 1
             animation.aboutBox1.style.animation = 'moveInBottom';
             animation.aboutBox1.style.animationDuration = '.5s';
-            animation.aboutBox1.style.opacity = '1';
+            animation.aboutBox1.style.opacity = '1 !important';
             // Box 2
             animation.aboutBox2.style.animation = 'moveInBottom';
             animation.aboutBox2.style.animationDuration = '1s';
-            animation.aboutBox2.style.opacity = '1';
+            animation.aboutBox2.style.opacity = '1 !important';
             // Box 3
             animation.aboutBox3.style.animation = 'moveInBottom';
             animation.aboutBox3.style.animationDuration = '1.5s';
-            animation.aboutBox3.style.opacity = '1';
+            animation.aboutBox3.style.opacity = '1 !important';
         }
 
         // Contact Section
