@@ -1,0 +1,47 @@
+// Header
+.header {
+    position: relative;
+    height: 100vh;
+    background-image: linear-gradient(
+        to bottom,
+        rgba($color-black, .3),
+        rgba($color-black, .8));
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+
+    // Div Containing Video
+    &__video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 100%;
+        z-index: -10;
+        overflow: hidden;
+    }
+
+    &__content {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    &__text-box {
+        color: $color-white;
+        position: absolute;
+        top: 45%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        overflow: hidden;
+        width: 80%;
+
+        @include respond(tablet-portrait) {
+            width: 70%;
+        }
+
+        @include respond(phone) {
+            width: 90%;
+        }
+    }
+}

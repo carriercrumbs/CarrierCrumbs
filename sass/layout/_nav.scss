@@ -1,0 +1,245 @@
+// Navbar
+.navigation {
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
+    transition: all .1s;
+
+    &__logo {
+        z-index: 500;
+        position: fixed;
+        float: left;
+        margin-left: 2.5rem;
+        padding: 2rem 0;
+
+        animation-name: moveInLeft;
+        animation-duration: .5s;
+        animation-timing-function: ease-in-out;
+
+        &--link {
+            font-size: 2rem;
+            color: $primary-color;
+            text-decoration: none;
+
+            &-img {
+                width: 18%;
+                background: #EFE06E;
+                border-radius: 5rem;
+                box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, .20);
+            }
+        }
+
+        @include respond(tablet-portrait) {
+            padding: 3rem 0;
+        }
+
+        @include respond(older-phone) {
+            padding: 3.5rem 0;
+        }
+    }
+
+    &__nav {
+        float: right;
+        margin-right: 2rem;
+        margin-top: 1.5rem;
+        transition: all .1s;
+        animation-name: moveInAbove;
+        animation-duration: .6s;
+        animation-timing-function: ease-in-out;
+
+
+        @include respond(tablet-portrait) {
+            position: absolute;
+            // top: 5.6rem;
+            left: 100%;
+            width: 100%;
+            height: 100vh;
+            background-image: linear-gradient(
+                to bottom,
+                rgba($primary-color,1),
+                rgba($color-black, 1));
+            transition: all 0.5s;
+            margin-bottom: 0 !important;
+            margin-top: 0 !important;
+        }
+    }
+
+    &__list {
+        font-size: 2rem;
+        font-weight: 100;
+        text-transform: uppercase;
+        list-style: none;
+        transition: all .1s;
+        margin-top: 3rem;
+
+        @include respond(tablet-portrait) {
+            width: 100%;
+            margin-top: 22rem !important;
+            padding: 0;            
+        }
+
+        @include respond(smaller-phone) {
+            font-size: 1.7rem;
+            margin-top: 14rem !important;
+        }
+
+    }
+
+    &__item {
+        display: inline-block;
+
+        &:not(:last-child) {
+            margin-right: 1rem;
+        }
+
+        @include respond(tablet-portrait) {
+            // margin: 3rem;
+            display: block;
+
+            &:not(:last-child) {
+                margin-right: 0;
+            }
+        }
+    }
+
+    &__link {
+
+        &:link,
+        &:visited {
+            color: $primary-color;
+            text-decoration: none;
+            transition: all .3s;
+    
+            &::after {
+                display: block;
+                margin: 0 auto;
+                content: " ";
+                height: 2px;
+                width: 1%;
+                transition: all .3s;
+                background-color: $primary-color;
+                opacity: 0;
+            }
+
+            &:hover,
+            &:active {
+                color: $color-white;
+    
+                &::after {
+                    display: block;
+                    margin: 0 auto;
+                    opacity: 1;
+                    height: 2px;
+                    background-color: $primary-color;
+                    content: " ";
+                    width: 100%;
+                }
+            }
+    
+            @include respond(tablet-portrait) {
+                color: #fff;
+                font-size: 4rem;
+                text-align: center;
+                display: block;
+                margin-bottom: 8rem;
+
+                &:hover {
+                    &::after {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+
+    // Mobile Nav
+    &__background {
+        display: none;
+        z-index: 1000;
+        background-color: $primary-color;
+        border-radius: 5rem;
+        box-shadow: 0 1.5rem 4rem rgba($color-black, .5);
+        color: $color-black;
+        position: fixed;
+        width: 15rem;
+        height: 6.5rem;
+        top: 3rem;
+        right: -5rem;
+
+        animation-name: moveInRight;
+        animation-duration: .5s;
+        animation-timing-function: ease-in-out;
+
+        @include respond(tablet-portrait) {
+            display: block;
+            top: 4.5rem;
+        }
+
+        @include respond(smaller-phone) {
+            height: 6rem;
+            top: 4rem;
+        }
+
+        @include respond(older-phone) {
+            height: 5rem;
+            top: 4rem;
+        }
+    }
+
+    &__toggle {
+        display: none;
+        z-index: 3000;
+        color: $color-black;
+        position: fixed;
+        width: 15rem;
+        height: 7rem;
+        top: 4.5rem;
+        right: -7rem;
+
+        animation-name: moveInRight;
+        animation-duration: .5s;
+        animation-timing-function: ease-in-out;
+
+        &--icon {
+            cursor: pointer;
+            font-size: 3.4rem;
+
+            @include respond(smaller-phone) {
+                font-size: 3rem;
+            }
+        }
+
+        @include respond(tablet-portrait) {
+            display: block;
+            top: 6rem;
+        }
+
+        @include respond(smaller-phone) {
+            top: 5.5rem;
+        }
+
+        @include respond(older-phone) {
+            top: 5.1rem;
+        }
+    }
+
+    &__active {
+        z-index: 1000;
+        left: 0;
+        display: block;
+    }
+
+    &__active-nav {
+        left: 0;
+        display: block;
+        transition: all .5s;
+    }
+
+    &__active-list {
+        opacity: 1 !important;
+        width: 100% !important;
+        display: block;
+        transition: all .3s;
+    }
+}
+

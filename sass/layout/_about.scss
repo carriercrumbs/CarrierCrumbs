@@ -1,0 +1,76 @@
+.about-desc {
+    &__img-box {
+
+        @include respond(tablet-portrait) {
+            text-align: center;
+        }
+
+        &--img {
+            border-radius: 50rem;
+            box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+            margin: 0 auto;
+            opacity: 0;
+            width: 100%;
+        
+            @include respond(tablet-portrait) {
+                width: 65%;
+            }
+        }
+    }
+
+    &__text-box {
+        margin-top: 4rem;
+
+        @include respond(tablet-portrait) {
+            margin-top: -2rem;
+        }
+
+        &--text {
+            font-size: 1.6rem;
+
+            &:not(:last-child) {
+                padding-bottom: 1.5rem;
+            }
+        }
+    }
+}
+
+
+.about-box {
+    background-image: linear-gradient(
+        to bottom,
+        rgba($color-black, .3),
+        rgba($color-black, .8)),
+        url(../media/nyc-bg.jpg);
+    background-attachment: fixed;
+    background-position: top;
+    background-size: cover;
+    padding: 6rem 0;
+
+    &__boxes {
+        text-align: center;
+        background-color: $primary-color-light;
+        color: $color-black;
+        opacity: 0;
+        padding: 4rem 2rem; 
+        border-radius: 3px;
+        transition: all .3s;
+
+        &:hover {
+            transform: translateY(-.4rem);
+        }
+
+        &--title {
+            font-size: 2.6rem;
+        }
+
+        &--icon {
+            font-size: 5rem;
+            padding: 3rem 0;
+        }
+
+        &--text {
+            font-size: 1.6rem;
+        }
+    }
+}

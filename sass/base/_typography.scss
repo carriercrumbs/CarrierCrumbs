@@ -1,0 +1,101 @@
+body {
+    font-family: 'Karla', sans-serif;
+    font-weight: 100;
+    text-rendering: optimizeLegibility;
+    line-height: 1.5;
+}
+
+// Primary Heading
+.primary-heading {
+    text-transform: uppercase;
+    width: 100%;
+    
+    &--main {
+        display: block;
+        font-size: 9rem;
+        font-weight: 500;
+        letter-spacing: 1px;
+        animation-name: moveInBottom;
+        animation-duration: .5s;
+        animation-timing-function: ease-in-out;
+
+        @include respond(tablet-portrait) {
+            font-size: 6.3rem;
+        }
+
+        @include respond(phone) {
+            font-size: 5.5rem;
+        }
+
+        @include respond(smaller-phone) {
+            font-size: 4.3rem;
+        }
+    }
+
+    &--sub {
+        color: $primary-color;
+        display: block;
+        font-size: 3.2rem;
+        font-weight: 300;
+        letter-spacing: 2px;
+
+        animation-name: moveInBottom;
+        animation-duration: .6s;
+        animation-timing-function: ease-in-out;
+
+        @include respond(tablet-portrait) {
+            font-size: 2.5rem;
+        }
+
+        @include respond(phone) {
+            font-size: 1.6rem;
+        }
+        @include respond(smaller-phone) {
+            font-size: 1.6rem;
+        }
+    }
+}
+
+// Secondary Heading
+.secondary-heading {
+    font-size: 4rem;
+    text-align: center;
+}
+
+// tertiary Heading
+.tertiary-heading {
+    font-size: 3rem;
+    text-align: center;
+
+    &::after {
+        display: block;
+        margin: 0 auto;
+        margin-top: .5rem;
+        height: 2px;
+        background-color: $color-black;
+        content: " ";
+        width: 15rem;
+    }
+}
+
+// Sub Text
+.sub-text {
+    font-size: 1.6rem;
+    text-align: center;
+    margin: 0 auto;
+    padding-top: 1.4rem;
+    width: 80rem;
+
+    @include respond(tablet-portrait) {
+        width: 65rem;
+    }
+
+    @include respond(phone) {
+        width: 40rem;
+    }
+
+    @include respond(smaller-phone) {
+        width: 34rem;
+    }
+}
+

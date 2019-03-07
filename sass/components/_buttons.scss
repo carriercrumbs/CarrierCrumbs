@@ -1,0 +1,38 @@
+.btn {
+    &:link,
+    &:visited {
+        text-transform: uppercase;
+        text-decoration: none;
+        display: inline-block;
+    }
+
+    // Main Header Button
+    &--main {
+        font-size: 1.8rem;
+        color: $primary-color;;
+        border: 1px solid $primary-color;
+        padding: 1.2rem 1.5rem;
+        border-radius: .5rem;
+
+        animation-name: moveInLeft;
+        animation-duration: 1s;
+        animation-timing-function: ease-in-out;
+        transition: all .4s;
+
+        &:not(:last-child) {
+            margin-right: 2.5rem;
+        }
+
+        &:hover,
+        &:active {
+            background-color: $primary-color;
+            border: 1px solid $color-black;
+            color: $color-black;
+        }
+
+        @include respond(phone) {
+            font-size: 1rem;
+        }
+        
+    }
+}

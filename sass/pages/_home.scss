@@ -1,0 +1,40 @@
+section {
+    padding: 8rem 0 6rem;
+}
+
+.music-video-section {
+    padding: 8rem 0 56rem;
+    background-color: #232323;
+
+    @include respond(tablet-portrait) {
+        padding: 8rem 0 1rem !important;
+    }
+
+    @include respond(tablet-landscape) {
+        padding: 8rem 0 65rem;
+    }
+
+    @include respond(big-desktop) {
+        padding: 8rem 0 48rem;
+    }
+}
+
+.director-section {
+    background-color: #f7f7f7;
+}
+
+.about-section {
+    background-color: #fff;
+}
+
+.contact-section {
+    @include respond (tablet-portrait) {
+        margin-top: -8rem;
+    }
+
+    @include respond(big-desktop) {
+        margin-top: -8rem;
+    }
+}
+
+
