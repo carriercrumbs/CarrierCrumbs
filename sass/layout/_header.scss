@@ -10,6 +10,15 @@
     background-size: cover;
     background-position: center;
 
+    @include respond(tablet-portrait) {
+        background-image: linear-gradient(
+            to bottom,
+            rgba($color-black, .3),
+            rgba($color-black, .8)),
+            url('../media/brooklyn-bridge.jpg');
+        background-attachment: scroll;
+    }
+
     // Div Containing Video
     &__video {
         position: absolute;

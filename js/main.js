@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", function() {
         div: document.querySelector('.navigation'),
         nav: document.querySelector('.navigation__nav'),
         list: document.querySelector('.navigation__list'),
+        background: document.querySelector('.navigation__background'),
         icon: document.querySelector('.navigation__toggle--icon')
     };
 
@@ -120,13 +121,14 @@ document.addEventListener("DOMContentLoaded", function() {
         
         // Toggles Nav Icon
         if (navigation.icon.classList.contains('fa-bars')) {
-
             navigation.icon.setAttribute("class", "fas fa-times navigation__toggle--icon");
             navigation.icon.removeAttribute("fas fa-bars navigation__toggle--icon");
-              
+            navigation.background.style.right = '35rem';
+            navigation.background.style.transition = 'all .6s';
           } else {
             navigation.icon.setAttribute("class", "fas fa-bars navigation__toggle--icon");
             navigation.icon.removeAttribute('fas fa-times navigation__toggle--icon');
+            navigation.background.style.right = '-5rem';
         }
     });
 
@@ -137,13 +139,14 @@ document.addEventListener("DOMContentLoaded", function() {
 
             // Toggles Nav Icon
             if (navigation.icon.classList.contains('fa-bars')) {
-
                 navigation.icon.setAttribute("class", "fas fa-times navigation__toggle--icon");
                 navigation.icon.removeAttribute("fas fa-bars navigation__toggle--icon");
-                
+                navigation.background.style.right = '90rem';
+                navigation.background.style.transition = 'all .5s';
             } else {
                 navigation.icon.setAttribute("class", "fas fa-bars navigation__toggle--icon");
                 navigation.icon.removeAttribute('fas fa-times navigation__toggle--icon');
+                navigation.background.style.right = '-5rem';
             }
         })
 	});
@@ -250,6 +253,4 @@ document.addEventListener("DOMContentLoaded", function() {
         slideRight();
     });
     slideInitial();
-
 });
-

@@ -24,12 +24,16 @@
             filter: grayscale(0);
         }
 
+        @include respond(tablet-portrait) {
+            filter: none;
+        }
+
         @include respond(phone) {
             height: 16rem;
         }
 
         @include respond(smaller-phone) {
-            font-size: 14rem;;
+            font-size: 14rem;
         }
     }
 

@@ -13,7 +13,6 @@
         border: 1px solid $primary-color;
         padding: 1.2rem 1.5rem;
         border-radius: .5rem;
-
         animation-name: moveInLeft;
         animation-duration: 1s;
         animation-timing-function: ease-in-out;
@@ -31,8 +30,7 @@
         }
 
         @include respond(phone) {
-            font-size: 1rem;
+            font-size: 1.5rem;
         }
-        
     }
 }

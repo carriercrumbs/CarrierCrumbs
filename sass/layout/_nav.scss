@@ -11,7 +11,6 @@
         float: left;
         margin-left: 2.5rem;
         padding: 2rem 0;
-
         animation-name: moveInLeft;
         animation-duration: .5s;
         animation-timing-function: ease-in-out;
@@ -28,7 +27,6 @@
                 box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, .20);
             }
         }
-
         @include respond(tablet-portrait) {
             padding: 3rem 0;
         }
@@ -47,8 +45,8 @@
         animation-duration: .6s;
         animation-timing-function: ease-in-out;
 
-
         @include respond(tablet-portrait) {
+            z-index: 4000;
             position: absolute;
             // top: 5.6rem;
             left: 100%;
@@ -56,7 +54,7 @@
             height: 100vh;
             background-image: linear-gradient(
                 to bottom,
-                rgba($primary-color,1),
+                rgba($primary-color, 1),
                 rgba($color-black, 1));
             transition: all 0.5s;
             margin-bottom: 0 !important;
@@ -82,7 +80,6 @@
             font-size: 1.7rem;
             margin-top: 14rem !important;
         }
-
     }
 
     &__item {
@@ -93,7 +90,6 @@
         }
 
         @include respond(tablet-portrait) {
-            // margin: 3rem;
             display: block;
 
             &:not(:last-child) {
@@ -103,7 +99,6 @@
     }
 
     &__link {
-
         &:link,
         &:visited {
             color: $primary-color;
@@ -155,7 +150,7 @@
     // Mobile Nav
     &__background {
         display: none;
-        z-index: 1000;
+        // z-index: 1000;
         background-color: $primary-color;
         border-radius: 5rem;
         box-shadow: 0 1.5rem 4rem rgba($color-black, .5);
@@ -242,4 +237,3 @@
         transition: all .3s;
     }
 }
-
