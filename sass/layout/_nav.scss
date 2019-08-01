@@ -11,8 +11,8 @@
         float: left;
         margin-left: 2.5rem;
         padding: 2rem 0;
-        animation-name: moveInLeft;
-        animation-duration: .5s;
+        animation-name: fadeIn;
+        animation-duration: 1s;
         animation-timing-function: ease-in-out;
 
         &--link {
@@ -41,8 +41,8 @@
         margin-right: 2rem;
         margin-top: 1.5rem;
         transition: all .1s;
-        animation-name: moveInAbove;
-        animation-duration: .6s;
+        animation-name: fadeIn;
+        animation-duration: 1s;
         animation-timing-function: ease-in-out;
 
         @include respond(tablet-portrait) {

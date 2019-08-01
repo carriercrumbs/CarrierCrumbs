@@ -1,6 +1,5 @@
 // Document on ready
 document.addEventListener("DOMContentLoaded", function() {
-
     window.onbeforeunload = function () {
         window.scrollTo(0, 0);  
     }
@@ -19,12 +18,12 @@ document.addEventListener("DOMContentLoaded", function() {
     var animation = {
         directorVideo: document.getElementById('director-vid'),
         directorText: document.getElementById('director-text'),
-        musicVidSection: document.getElementById('music-vid'),
-        musicVidMobile: document.getElementById('music-vid-mobile'),
+        currentVideo: document.querySelector('.slides__current-video'),
+        videoThumbnails: document.getElementById('video-thumbnails'),
         aboutImg: document.getElementById('about-img'),
-        aboutBox1: document.getElementById('about-box-1'),
-        aboutBox2: document.getElementById('about-box-2'),
-        aboutBox3: document.getElementById('about-box-3'),
+        featureBox1: document.getElementById('feature-box-1'),
+        featureBox2: document.getElementById('feature-box-2'),
+        featureBox3: document.getElementById('feature-box-3'),
         instagram: document.getElementById('instagram'),
         twitter: document.getElementById('twitter'),
         email: document.getElementById('email'),
@@ -61,19 +60,21 @@ document.addEventListener("DOMContentLoaded", function() {
         // Music Video Section
         if(window.pageYOffset > 1250) {
             // Carousel
-            animation.musicVidSection.style.animation = 'moveInRight';
-            animation.musicVidSection.style.animationDuration = '.5s';
-            animation.musicVidSection.style.opacity = '1';
-            // Mobile Music Video Section
-            animation.musicVidMobile.style.animation = 'moveInRight';
-            animation.musicVidMobile.style.animationDuration = '.5s';
-            animation.musicVidMobile.style.opacity = '1';
+            animation.currentVideo.style.animation = 'moveInRight';
+            animation.currentVideo.style.animationDuration = '.5s';
+            animation.currentVideo.style.opacity = '1';
+
+            // Check this animation later
+            animation.videoThumbnails.style.animation = 'fade';
+            animation.videoThumbnails.style.animationDuration = '.5s';
+            animation.videoThumbnails.style.opacity = '1';
+
         }
 
         // About Section
         if (window.pageYOffset > 2000) {
             // About Image
-            animation.aboutImg.style.animation = 'moveInBottom';
+            animation.aboutImg.style.animation = 'fadeUp';
             animation.aboutImg.style.animationDuration = '.5s';
             animation.aboutImg.style.opacity = '1';
         }
@@ -81,17 +82,17 @@ document.addEventListener("DOMContentLoaded", function() {
         // About Section Yellow Boxes
         if (window.pageYOffset > 2300) {
             // Box 1
-            animation.aboutBox1.style.animation = 'moveInBottom';
-            animation.aboutBox1.style.animationDuration = '.5s';
-            animation.aboutBox1.style.opacity = '1 !important';
+            animation.featureBox1.style.animation = 'fadeUp';
+            animation.featureBox1.style.animationDuration = '.5s';
+            animation.featureBox1.style.opacity = '1 !important';
             // Box 2
-            animation.aboutBox2.style.animation = 'moveInBottom';
-            animation.aboutBox2.style.animationDuration = '1s';
-            animation.aboutBox2.style.opacity = '1 !important';
+            animation.featureBox2.style.animation = 'fadeUp';
+            animation.featureBox2.style.animationDuration = '1s';
+            animation.featureBox2.style.opacity = '1 !important';
             // Box 3
-            animation.aboutBox3.style.animation = 'moveInBottom';
-            animation.aboutBox3.style.animationDuration = '1.5s';
-            animation.aboutBox3.style.opacity = '1 !important';
+            animation.featureBox3.style.animation = 'fadeUp';
+            animation.featureBox3.style.animationDuration = '1.5s';
+            animation.featureBox3.style.opacity = '1 !important';
         }
 
         // Contact Section
@@ -123,12 +124,9 @@ document.addEventListener("DOMContentLoaded", function() {
         if (navigation.icon.classList.contains('fa-bars')) {
             navigation.icon.setAttribute("class", "fas fa-times navigation__toggle--icon");
             navigation.icon.removeAttribute("fas fa-bars navigation__toggle--icon");
-            navigation.background.style.right = '35rem';
-            navigation.background.style.transition = 'all .6s';
           } else {
             navigation.icon.setAttribute("class", "fas fa-bars navigation__toggle--icon");
             navigation.icon.removeAttribute('fas fa-times navigation__toggle--icon');
-            navigation.background.style.right = '-5rem';
         }
     });
 
@@ -151,6 +149,107 @@ document.addEventListener("DOMContentLoaded", function() {
         })
 	});
 
+    // Slideshow
+    const current = document.getElementById('current');
+    const thumbnail = document.querySelectorAll('.slides__thumbnails--img');
+    const videoTitle = document.getElementById('caption')
+    const borderColor = '#EFE06E solid 2px';
+    const resetBorderColor = 'transparent solid 2px';
+    
+    // Set first img title, thumbnail & border color
+    videoTitle.textContent = thumbnail[0].alt;
+    current.src = thumbnail[0].dataset.src;
+    thumbnail[0].style.border = borderColor;
+
+    // Whenever a thumbnail is clicked
+    thumbnail.forEach(function (thumbnail) {
+        thumbnail.addEventListener('click', imgClick)
+	});
+
+    function imgClick(e) {
+        // Displays Video Title
+        videoTitle.textContent = e.target.alt;
+        // Adds fadeIn Class, Remove after .5 Seconds
+        videoTitle.classList.add('fade-in');
+        setTimeout(() => videoTitle.classList.remove('fade-in'), 500);
+
+        // Reset Border Color
+        thumbnail.forEach(thumbnail => (thumbnail.style.border = resetBorderColor));
+
+        // Change current image to src of clicked image
+        current.src = e.target.dataset.src;
+
+        // Change the opacity to opacity var
+        e.target.style.border = borderColor;
+
+        // Adds Slide Left Class, Remove after .5 Seconds
+        current.classList.add('slide-left');
+        setTimeout(() => current.classList.remove('slide-left'), 500);
+    }
+
+    // Current Slide
+    var slideIndex = 1;
+
+    // Displays Slides
+    showSlides(slideIndex);
+
+    // Goes To Previous Slide
+    function minusSlides() {
+        showSlides(slideIndex -= 1);
+    }
+    var prevSlide = document.querySelector('.slides__prev');
+    prevSlide.addEventListener('click', minusSlides);
+
+    // Goes To Next Slide
+    function plusSlides() {
+        showSlides(slideIndex += 1);
+    }
+    var nextSlide = document.querySelector('.slides__next');
+    nextSlide.addEventListener('click', plusSlides);
+
+    // Gets Slides
+    function showSlides(cur) {
+        var dots;
+        var i;
+        var slides = document.getElementsByClassName("slides__current");
+        dots = document.getElementsByClassName("slides__dot");
+
+        if (cur > slides.length) {
+            slideIndex = 1;
+        };
+
+        if (cur < 1) {
+            slideIndex = slides.length;
+        };
+
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+        };
+
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" slides__active", "");
+        };
+
+        slides[slideIndex-1].style.display = "block";  
+        dots[slideIndex-1].className += " slides__active";
+    }
+
+    // Keeps Track of Current Slide for Dots
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+
+    // Dots On Click
+    var firstDot = document.getElementById('1');
+    firstDot.addEventListener('click', function() {
+        currentSlide(1)
+    })
+
+    var secondDot = document.getElementById('2');
+    secondDot.addEventListener('click', function() {
+        currentSlide(2)
+    })
+
     // Scroll to Element
     $("a.scroll").click(function (event) {
         event.preventDefault();
@@ -159,98 +258,4 @@ document.addEventListener("DOMContentLoaded", function() {
             scrollTop: $($(this).attr("href")).offset().top
         }, 1000);
     });
-
-    // Carousel Function
-    var slide = $('.carousel__main');
-    var slideTotal = slide.length - 1;
-    var slideCurrent = -1;
-  
-    // Initializes Slide Functions
-    function slideInitial() {
-        slide.addClass('proactivede');  
-
-        setTimeout(function() {
-            slideRight();
-        }, 500);
-    }
-  
-    // Right Slide Function
-    function slideRight() {
-        if (slideCurrent < slideTotal) {
-            slideCurrent++;
-        } else {
-            slideCurrent = 0;
-        }
-
-        if (slideCurrent > 0) {
-            var preactiveSlide = slide.eq(slideCurrent - 1);
-        } else {
-            var preactiveSlide = slide.eq(slideTotal);
-        }
-        
-        var activeSlide = slide.eq(slideCurrent);
-        
-        if (slideCurrent < slideTotal) {
-            var proactiveSlide = slide.eq(slideCurrent + 1);
-        } else {
-            var proactiveSlide = slide.eq(0);
-        }
-
-        slide.each(function() {
-        var thisSlide = $(this);
-            if (thisSlide.hasClass('preactivede')) {
-                thisSlide.removeClass('preactivede preactive active proactive').addClass('proactivede');
-            }
-            if (thisSlide.hasClass('preactive')) {
-                thisSlide.removeClass('preactive active proactive proactivede').addClass('preactivede');
-            }
-        });
-        preactiveSlide.removeClass('preactivede active proactive proactivede').addClass('preactive');
-        activeSlide.removeClass('preactivede preactive proactive proactivede').addClass('active');
-        proactiveSlide.removeClass('preactivede preactive active proactivede').addClass('proactive');
-    }
-
-    // Left Slide Function
-    function slideLeft() {
-        if (slideCurrent > 0) {
-            slideCurrent--;
-        } else {
-            slideCurrent = slideTotal;
-        }
-
-        if (slideCurrent < slideTotal) {
-            var proactiveSlide = slide.eq(slideCurrent + 1);
-        } else {
-            var proactiveSlide = slide.eq(0);
-        }
-        var activeSlide = slide.eq(slideCurrent);
-        if (slideCurrent > 0) {
-            var preactiveSlide = slide.eq(slideCurrent - 1);
-        } else {
-            var preactiveSlide = slide.eq(slideTotal);
-        }
-        slide.each(function() {
-            var thisSlide = $(this);
-        if (thisSlide.hasClass('proactivede')) {
-            thisSlide.removeClass('preactive active proactive proactivede').addClass('preactivede');
-        }
-        if (thisSlide.hasClass('proactive')) {
-            thisSlide.removeClass('preactivede preactive active proactive').addClass('proactivede');
-        }
-        });
-        preactiveSlide.removeClass('preactivede active proactive proactivede').addClass('preactive');
-        activeSlide.removeClass('preactivede preactive proactive proactivede').addClass('active');
-        proactiveSlide.removeClass('preactivede preactive active proactivede').addClass('proactive');
-    }
-  
-    // Carousel Controls
-    var left = $('.carousel__left');
-    var right = $('.carousel__right');
-    left.on('click', function() {
-        slideLeft();
-    });
-    right.on('click', function() {
-        slideRight();
-    });
-    slideInitial();
 });

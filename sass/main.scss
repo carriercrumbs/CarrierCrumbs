@@ -4,16 +4,16 @@
 
 // BASE
 @import "base/animations";
-
 @import "base/base";
 @import "base/classes";
 @import "base/typography";
 
 // COMPONENTS
 @import "components/buttons";
-@import "components/carousel";
 @import "components/director-box";
+@import "components/feature-box";
 @import "components/media-showcase";
+@import "components/slides";
 
 // LAYOUT
 @import "layout/about";
