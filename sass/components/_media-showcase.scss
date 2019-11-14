@@ -13,10 +13,9 @@
         height: 20rem;
         margin: 0;
         overflow: hidden;
-        background: #EFE06E;
+        background: #F7EB94;
         transition: all .3s;
         filter: grayscale(100%);
-
         border-top: 2px solid #000;
         border-bottom: 2px solid #000;
 
@@ -30,6 +29,7 @@
 
         @include respond(phone) {
             height: 16rem;
+            background: #F7EFB2;
         }
 
         @include respond(smaller-phone) {

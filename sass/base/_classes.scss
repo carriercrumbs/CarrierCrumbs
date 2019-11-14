@@ -10,7 +10,6 @@
     &::after {
         display: block;
         margin: 0 auto;
-
         height: 2px;
         background-color: #232323;
         content: " ";
@@ -22,6 +21,53 @@
 .margin-header { margin-bottom: 6rem; }
 .margin-top-small { margin-top: 2rem; }
 .margin-top-medium { margin-top: 4rem; }
+.margin-top-big { margin-top: 6rem; }
 .margin-bottom-small { margin-bottom: 2rem; }
 .margin-bottom-medium { margin-bottom: 4rem; }
 .margin-bottom-big { margin-bottom: 6rem; }
+
+// Animations
+.fadeLeft-directors-section {
+    animation-name: fadeLeft;
+    animation-duration: .5s;
+    opacity: 1 !important;
+}
+
+.fadeRight-MV {
+    animation-name: fadeRight;
+    animation-duration: .5s;
+    opacity: 1 !important;
+}
+
+.fadeUp-about {
+    animation-name: fadeUp;
+    animation-duration: .5s;
+    opacity: 1 !important;
+}
+
+.fadeUp-feature-box {
+    animation-name: fadeUp;
+    animation-duration: .5s;
+    opacity: 1 !important;
+}
+
+.fadeLeft-social-1 {
+    animation-name: fadeLeft;
+    animation-duration: .2s;
+    opacity: 1 !important;
+}
+.fadeLeft-social-2 {
+    animation-name: fadeLeft;
+    animation-duration: .4s;
+    opacity: 1 !important;
+}
+.fadeLeft-social-3 {
+    animation-name: fadeLeft;
+    animation-duration: .6s;
+    opacity: 1 !important;
+}
+.fadeLeft-social-4 {
+    animation-name: fadeLeft;
+    animation-duration: .8s;
+    opacity: 1 !important;
+}

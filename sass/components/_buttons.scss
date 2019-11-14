@@ -6,13 +6,13 @@
         display: inline-block;
     }
 
-    // Main Header Button
     &--main {
         animation-name: fadeIn;
-        animation-duration: 1s;
+        animation-duration: .6s;
         animation-timing-function: ease-in-out;
         font-size: 1.8rem;
-        color: $primary-color;;
+        color: $primary-color;
+        background-color: $color-black;
         border: 2px solid $primary-color;
         padding: 1.2rem 1.5rem;
         border-radius: .5rem;
@@ -30,7 +30,18 @@
         }
 
         @include respond(phone) {
-            font-size: 1.5rem;
+            background-color: $primary-color;
+            border: none;
+            color: #000;
+            font-size: 1.4rem;
+            font-weight: 900;
+            text-shadow: 0.075em 0.08em 0.5em rgb(151, 151, 151);
+            border-radius: 10rem;
+
+            &:hover,
+            &:active {
+                border: none;
+            }
         }
     }
 }

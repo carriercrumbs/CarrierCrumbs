@@ -1,0 +1,57 @@
+// Slideshow
+.slider {
+    max-width: 100rem;
+    margin: 0 auto;
+
+    &__thumbnail {
+        position: relative;
+
+        &--img {
+            transition: all .3s;
+            width: 100%;
+        }
+    }
+
+    &__prev, &__next {
+        cursor: pointer;
+        background-color: rgba(0,0,0,0.8);
+        border: 2px solid #EFE06E;
+        border-radius: 0 3px 3px 0;
+        color: white;
+        font-size: 18px;
+        font-weight: bold;
+        padding: 16px;
+        position: absolute;
+        top: 43%;
+        transform: translate(0, -50%);
+        transition: 0.6s ease;
+        user-select: none;
+
+        @include respond(smaller-phone) {
+            padding: 1rem;
+        }
+
+        &:hover {
+            background-color: #EFE06E;
+            border: 2px solid #000;
+            color: #000;
+        }
+    }
+
+    &__prev {
+        border-radius: 3px 0 0 3px;
+
+        @include respond(tablet-portrait) {
+            left: .5rem;
+        }
+    }
+
+    &__next {
+        border-radius: 3px 0 0 3px;
+        right: 0;
+
+        @include respond(tablet-portrait) {
+            right: .5rem;
+        }
+    }
+}

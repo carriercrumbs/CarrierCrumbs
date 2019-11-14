@@ -1,11 +1,9 @@
 section {
-    // 6rem was third paramater
     padding: 8rem 0;
 }
 
 .music-video-section {
     background-color: #232323;
-    // margin-top: -6rem;
     position: relative;
     z-index: 1;
 }
@@ -15,7 +13,12 @@ section {
 }
 
 .about-section {
-    background-color: #fff;
+    background-color: #000;
+    color: #fff;
+
+    @include respond(tablet-portrait) {
+        background-attachment: scroll;
+    }   
 }
 
 .feature-section {
@@ -27,7 +30,6 @@ section {
     background-attachment: fixed;
     background-position: top;
     background-size: cover;
-    // padding: 12rem 0;
 
     @include respond(tablet-portrait) {
         background-attachment: scroll;

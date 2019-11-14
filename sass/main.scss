@@ -13,7 +13,9 @@
 @import "components/director-box";
 @import "components/feature-box";
 @import "components/media-showcase";
-@import "components/slides";
+@import "components/slick-slider";
+@import "components/slider";
+@import "components/video-box";
 
 // LAYOUT
 @import "layout/about";
@@ -24,7 +26,3 @@
 
 // PAGES
 @import "pages/home";
-
-
-
-
