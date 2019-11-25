@@ -26,6 +26,11 @@
 .margin-bottom-medium { margin-bottom: 4rem; }
 .margin-bottom-big { margin-bottom: 6rem; }
 
+.remove-nav {
+    right: 90rem;
+    transition: all .5s;
+}
+
 // Animations
 .fadeLeft-directors-section {
     animation-name: fadeLeft;
@@ -35,6 +40,13 @@
 
 .fadeRight-MV {
     animation-name: fadeRight;
+    animation-duration: .5s;
+    opacity: 1 !important;
+}
+
+
+.fadeIn {
+    animation-name: fadeIn;
     animation-duration: .5s;
     opacity: 1 !important;
 }
