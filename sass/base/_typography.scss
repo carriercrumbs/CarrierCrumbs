@@ -4,6 +4,10 @@ body {
     text-rendering: optimizeLegibility;
     line-height: 1.5;
     overflow-x: hidden;
+
+    @include respond(tablet-portrait) {
+        overflow-x: hidden;
+    }
 }
 
 // Primary Heading
@@ -61,7 +65,7 @@ body {
 .secondary-heading {
     font-size: 4rem;
     text-align: center;
-
+    
     &--main {
         color: #fff;
 

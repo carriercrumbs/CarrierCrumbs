@@ -1,0 +1,156 @@
+.form {
+    background-color: rgb(251, 251, 251);
+    border-radius: 3px;
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, .30);
+    font-size: 1.7rem;
+    opacity: 0;
+    padding: 4rem 0;
+
+    &__container {
+        display: block;
+        font-size: 2rem;
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    &__text-box {
+        margin-bottom: 5rem;
+    }
+
+    &__text {
+        &:not(:last-child) {
+            margin-bottom: 1.4rem;
+        }
+    }
+
+    &__content-box {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 5rem;
+        margin-bottom: 6rem;
+
+        @include respond(tablet-portrait) {
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+
+    // Adjacent sibling
+    &__input:placeholder-shown + &__label {
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-4rem);
+    }
+
+    // Inputs & Textarea
+    &__input, &__textarea {
+        padding: 1rem;
+        margin-top: 1.5rem;
+        transition: all .3s;
+        border: none;
+        border-bottom: 3px solid transparent;
+        border-radius: 3px;
+        box-shadow: 0 1rem 2rem rgba(0, 0, 0, .1);
+        font-size: 1.5rem;
+        width: 100%;
+
+        @include respond(tablet-portrait) {
+            border-bottom: 3px solid rgba(51, 51, 51, 0.445);
+        }
+    
+        &::placeholder {
+            color: black;
+            font-size: 1.5rem;
+            opacity: .5;
+            transition: all .3s;
+        }
+    
+        &:focus {
+            background-color: #F7EFB2;
+            border-bottom: 3px solid #000;
+            outline: none;
+    
+            &::placeholder {
+                color: black;
+                opacity: 1;
+            }
+        }
+    }
+
+    &__textarea {
+        height: 10rem;
+        font-size: 1.5rem;
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+    }
+
+    // Form Submitted
+    &__submitted {
+        text-align: center;
+        background-color:rgba(0,0,0,0.8);
+        display: none;
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        z-index: 10000000;
+
+        &-background{
+            background-color: #fff;
+            border-radius: 3px;
+            margin: 0 auto;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            
+            // !important
+            width: 114rem;
+        }
+
+        &-content {
+            padding: 4rem 0;
+        }
+
+        &-text {
+            font-size: 2.2rem;
+
+            text-align: center;
+            max-width: 60rem;
+            margin: 0 auto;
+            padding: 0 4rem;
+
+            &--main {
+                display: block;
+                margin-bottom: 1rem;
+            }
+
+            &--sub {
+                display: block;
+            }
+        }
+    }
+
+    // Both Submit Buttons
+    &__submit, &__submitted-confirm {
+        text-align: center;
+        margin-top: 4rem;
+    
+        &--btn {
+            background-color: #F7EB94;
+            border-radius: 5rem;
+            border: none;
+            box-shadow: 0 1rem 2rem rgba(0, 0, 0, .1);
+            font-size: 2rem;
+            padding: 1.5rem 6rem;
+            transition: all .2s;
+
+            &:hover {
+                cursor: pointer;
+                background: $color-grey-light;
+                color: $primary-color;
+            }
+    
+            &:focus {
+                outline: none;
+            }
+        }
+    }
+}

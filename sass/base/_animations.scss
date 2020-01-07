@@ -11,7 +11,6 @@
 }
 
 @keyframes fadeLeft {
-
     0% {
         opacity: 0;
         transform: translateX(-10rem);
@@ -24,7 +23,6 @@
 }
 
 @keyframes fadeRight {
-
     0% {
         opacity: 0;
         transform: translateX(10rem);
@@ -37,12 +35,17 @@
 }
 
 @keyframes fadeIn {
-
     0% {
         opacity: 0;
     }
 
     100% {
         opacity: 1;
+    }
+}
+
+@keyframes loadingSpinner {
+    to {
+        transform: rotate(360deg);
     }
 }

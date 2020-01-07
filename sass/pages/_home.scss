@@ -1,16 +1,12 @@
-section {
-    padding: 8rem 0;
-}
+section { padding: 8rem 0; }
 
 .music-video-section {
-    background-color: #232323;
+    background-color: #333;
     position: relative;
     z-index: 1;
 }
 
-.director-section {
-    background-color: #f7f7f7;
-}
+.director-section { background-color: #f7f7f7; }
 
 .about-section {
     background-color: #000;
@@ -36,9 +32,11 @@ section {
     }
 }
 
-.contact-section {
+.booking-section {
+    background-color: #333;
+}
 
-    @include respond (tablet-portrait) {
-        margin-top: -4rem;
-    }
+.media-section {
+    background-color:#333;
+    padding: 0 0 6rem;
 }

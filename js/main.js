@@ -19,9 +19,10 @@ document.addEventListener("DOMContentLoaded", function() {
         getCurrentSlider: document.querySelector('.slick-current'),
         getAbout: document.querySelector('.about-box'),
         getFeatureBox: document.querySelector('.feature-box'),
+        getContactForm: document.querySelector('.form'),
+        getSocialMedia: document.querySelector('.media'),
         instagram: document.getElementById('instagram'),
         twitter: document.getElementById('twitter'),
-        email: document.getElementById('email'),
         youtube:document.getElementById('youtube')
     };
 
@@ -78,27 +79,32 @@ document.addEventListener("DOMContentLoaded", function() {
         }
         // Directors Reel Section
         if (window.pageYOffset > 525) {
-            DOMString.getDirectorBox.classList.add('fadeLeft-directors-section');
+            DOMString.getDirectorBox.classList.add('fadeUp');
         }
         // Music Video Section
         if(window.pageYOffset > 1250) {
-            DOMString.getCurrentMusicVideo.classList.add('fadeRight-MV')
-            DOMString.getSlider.classList.add('fadeRight-MV')
+            DOMString.getCurrentMusicVideo.classList.add('fadeUp');
+            DOMString.getSlider.classList.add('fadeUp');
         }
         // About Section
         if (window.pageYOffset > 2300) {
-            DOMString.getAbout.classList.add('fadeUp-about')
+            DOMString.getAbout.classList.add('fadeUp');
         }
         // Features Section
         if (window.pageYOffset > 2900) {
-            DOMString.getFeatureBox.classList.add('fadeUp-feature-box')
+            DOMString.getFeatureBox.classList.add('fadeUp');
         }
-        // Contact Section
-        if (window.pageYOffset > 3200) {
-            DOMString.instagram.classList.add('fadeLeft-social-1')
-            DOMString.twitter.classList.add('fadeLeft-social-2')
-            DOMString.email.classList.add('fadeLeft-social-3')
-            DOMString.youtube.classList.add('fadeLeft-social-4')
+
+        // Booking Section
+        if (window.pageYOffset > 3500) {
+            DOMString.getContactForm.classList.add('fadeUp');
+            DOMString.getSocialMedia.classList.add('fadeUp');
+        }
+        // Social Media Section
+        if (window.pageYOffset > 4200) {
+            DOMString.instagram.classList.add('fadeLeft-social-1');
+            DOMString.twitter.classList.add('fadeLeft-social-2');
+            DOMString.youtube.classList.add('fadeLeft-social-3');
         }
     });
  

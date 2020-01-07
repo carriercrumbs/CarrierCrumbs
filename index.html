@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
     <meta name="description" content="Carrier Crumbs is a Brooklyn based production company working to enhance the careers of up and coming artists.">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Carrier Crumbs</title>
@@ -19,6 +19,24 @@
     <link rel="icon" type="image/png" sizes="16x16" href="media/favicon-16x16.png">
 </head>
 <body>
+    <!-- Form Thank Your Message -->
+    <div class="form__submitted" id="modal-container">
+        <div class="form__submitted-background">
+            <div class="form__submitted-content">
+                <p class="form__submitted-text">
+                    <span class="form__submitted-text--main">
+                        Thanks for contacting us!
+                    </span>
+                    <span class="form__submitted-text--sub">
+                        We will get back to you very soon!
+                    </span>
+                </p>
+                <div class="form__submitted-confirm">
+                    <button class="form__submitted-confirm--btn">Understood!</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- Navigation -->
     <nav class="navigation">
         <!-- Nav Toggle Background -->
@@ -26,9 +44,11 @@
             &nbsp;
         </div>
         <div class="navigation__logo">
-            <a href="#home" class="navigation__logo--link scroll">
-                <img src="media/bird.png" alt="Bird Logo" class="navigation__logo--link-img">
-            </a>
+            <div class="navigation__logo--bg">
+                <a href="#home" class="navigation__logo--link scroll">
+                    <img src="media/bird.png" alt="Bird Logo" class="navigation__logo--link-img">
+                </a>
+            </div>
         </div>
         <div class="navigation__nav">
             <ul class="navigation__list">
@@ -56,7 +76,7 @@
     <header class="header" id="home">
         <div class="header__video">
             <video class="header__content" poster="media/Broadway.jpg" autoplay loop muted>
-                <source src="media/Broadway.mp4" type="video/mp4">
+                <!-- <source src="media/Broadway.mp4" type="video/mp4"> -->
                 Your browser does not support the video tag.
             </video>
         </div>
@@ -66,16 +86,16 @@
                 <span class="primary-heading--sub">Brooklyn based production company</span>
             </h1>
             <div class="margin-top-medium">
-                <a href="#about" class="btn btn--main scroll">About Us</a>
-                <a href="#reel" class="btn btn--main scroll">Director's Reel</a>
+                <a href="#about" class="btn btn--sub scroll">About Us</a>
+                <a href="#contact" class="btn btn--main scroll">Book Now</a>
             </div>
         </div>
     </header>
 
     <!-- Director Reel Section -->
     <section class="director-section" id="reel">
-        <div>
-            <h2 class="secondary-heading margin-bottom-big">
+        <div class="margin-bottom-big">
+            <h2 class="secondary-heading">
                 Director's Reel     
             </h2>
         </div>
@@ -122,12 +142,6 @@
 
         <!-- Slider -->
         <div class="slider">
-            <!-- <div class="slider__thumbnail">
-                <a href="#video" class="scroll">
-                    <img src="media/back-in-the-rock.jpg" alt="Back In The Rock -_ Mack Dollaz ft. Young P3RK" data-src="https://www.youtube.com/embed/7ShcJ5xmQas" class="slider__thumbnail--img">
-                </a>
-            </div> -->
-
             <div class="slider__thumbnail">
                 <a href="#video" class="scroll">
                     <img src="media/switched.jpg" alt="Switched On Me -_ Young P3RK" data-src="https://www.youtube.com/embed/rTcJINl631E?rel=0" class="slider__thumbnail--img">
@@ -192,8 +206,8 @@
 
     <!-- About Section -->
     <section class="about-section" id="about">
-        <div>
-            <h2 class="secondary-heading margin-bottom-medium">
+        <div class="margin-bottom-medium">
+            <h2 class="secondary-heading">
                 <span class="secondary-heading--main">Meet The Founder:</span>
                 <span class="secondary-heading--sub">Luis Vazquez</span>
             </h2>
@@ -222,8 +236,8 @@
 
     <!-- Feature Section -->
     <section class="feature-section">
-        <div class="margin-bottom-medium">
-            <h2 class="secondary-heading primary-text text-shadow-black margin-bottom-big">
+        <div class="margin-bottom-big">
+            <h2 class="secondary-heading primary-text text-shadow">
                 Here's What I Can Do
             </h2>
         </div>
@@ -249,7 +263,7 @@
                 <div class="col-1-of-3">
                     <div class="feature-box--3">
                         <h3 class="feature-box__heading">Film Treatment</h3>
-                        <i class="fas fa-scroll feature-box__icon"></i>
+                        <i class="fas fa-film feature-box__icon"></i>
                         <p class="feature-box__text">Allow me to bring life to your Music with a well thought out plan to create a music video.</p>
                     </div>
                 </div>
@@ -257,57 +271,105 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section class="contact-section" id="contact">
+    <!-- Booking Section -->
+    <section class="booking-section" id="contact">
         <div class="margin-bottom-medium">
-            <h2 class="secondary-heading">
-                Contact Info
+            <h2 class="secondary-heading primary-text text-shadow">
+                Contact Us!
             </h2>
-            <p class="sub-text">Follow all Social Media to remain updated on new content. Find the email icon below to get information on Booking Inquiries. See you soon - Carrier Crumbs </p>
         </div>
 
-        <ul class="media-showcase">
-            <!-- Instagram -->
-            <li class="media-showcase__list" id="instagram">
-                <a href="https://www.instagram.com/carriercrumbs/" target="_blank">
-                    <figure class="media-showcase__fig">
-                        <div class="media-showcase__text">
-                            <i class="fab fa-instagram media-showcase__text--icon"></i>
+        <!-- Contact Form -->
+        <div class="row">
+            <form class="form" method="POST" action="https://script.google.com/macros/s/AKfycbyg8TbXvfnEMELI9kxWSoiWCpoQwVGIzxaR8VJW/exec">
+                <div class="form__container">
+                    <div class="form__text-box">
+                        <p class="form__text">
+                            Are you an up and coming artist looking to enhance your career?
+                        </p>
+                        <p class="form__text">
+                            Feel free to send me a message along with your music so we can get to work!
+                        </p>
+                    </div>
+
+                    <div class="form__content-box">
+                        <!-- Form Name -->
+                        <div class="form__name">
+                            <label for="name">Name: </label>
+                            <input class="form__input" id="name" name="Name" placeholder="Your Name" required/>
                         </div>
-                    </figure>
-                </a>
-            </li>
-            <!-- Twitter -->
-            <li class="media-showcase__list" id="twitter">
-                <a href="https://twitter.com/carriercrumbs" target="_blank">
-                    <figure class="media-showcase__fig">
-                        <div class="media-showcase__text">
-                            <i class="fab fa-twitter media-showcase__text--icon"></i>
+
+                        <!-- Form Email -->
+                        <div class="form__email">
+                            <label for="email">Email Address:</label>
+                            <input class="form__input" id="email" name="Email" type="email" required placeholder="Your Email"/>
                         </div>
-                    </figure>
-                </a>
-            </li>
-            <!-- Email -->
-            <li class="media-showcase__list" id="email">
-                <a href="mailto:carriercrumbs@gmail.com">
-                    <figure class="media-showcase__fig">
-                        <div class="media-showcase__text">
-                            <i class="far fa-envelope media-showcase__text--icon"></i>
+
+                        <!-- Form Phone -->
+                        <div class="form__phone">
+                            <label for="phone">Phone: </label>
+                            <input class="form__input" id="phone" name="Phone" required placeholder="Your Phone #"/>
                         </div>
-                    </figure>
-                </a>
-            </li>
-            <!-- Youtube -->
-            <li class="media-showcase__list" id="youtube">
-                <a href="https://www.youtube.com/channel/UCXupSI6RneTyzxfQEh5j_6g" target="_blank">
-                    <figure class="media-showcase__fig">
-                        <div class="media-showcase__text">
-                            <i class="fab fa-youtube media-showcase__text--icon"></i>
-                        </div>
-                    </figure>
-                </a>
-            </li>
-        </ul>
+                    </div>
+
+                    <!-- Form Message -->
+                    <div class="form__message">
+                        <label for="message">Message: </label>
+                        <textarea class="form__textarea" id="message" name="Message" rows="10" required placeholder="Please describe your purpose and attach a link to fire music here..."></textarea>
+                    </div>
+
+                    <!-- reminder: email-invalid in js -->
+                    <span class="form__invalid" style="display:none">Must be a valid email address</span>
+
+                    <div class="form__submit">
+                        <button class="form__submit--btn">Book Now</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Social Media Section -->
+    <section class="media-section">
+        <div class="margin-bottom-medium">
+            <h2 class="secondary-heading primary-text text-shadow">
+                Our Social Media
+            </h2>
+        </div>
+
+        <div class="row">
+            <div class="media">
+                <div class="media__text-box">
+                    <p class="media__text">
+                        <span class="media__text--main">
+                            Feel free to follow us on the Social Media listed below to remain updated on new content and on Booking Inquiries.
+                        </span>
+                        <span class="media__text--sub"> 
+                            See you soon!
+                        </span>
+                    </p>
+                </div>
+                <div class="media__grid">
+                    <div class="media__item" id="instagram">
+                        <a href="https://www.instagram.com/carriercrumbs/" target="_blank" class="media__link">
+                            <i class="fab fa-instagram media__icon"></i>
+                        </a>
+                    </div>
+
+                    <div class="media__item" id="twitter">
+                        <a href="https://twitter.com/carriercrumbs" target="_blank" class="media__link">
+                            <i class="fab fa-twitter media__icon"></i>
+                        </a>
+                    </div>
+
+                    <div class="media__item" id="youtube">
+                        <a href="https://www.youtube.com/channel/UCXupSI6RneTyzxfQEh5j_6g" target="_blank" class="media__link">
+                            <i class="fab fa-youtube media__icon"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- Footer -->
@@ -342,7 +404,7 @@
             <div class="col-1-of-2">
                 <div class="footer__text-box">
                     <p class="footer__text">
-                        &copy; 2019 Carrier Crumbs is a Brooklyn based company founded by
+                        &copy; 2020 Carrier Crumbs is a Brooklyn based company founded by
                         <a href="#" class="footer__text--link">Luis Vazquez</a>,
                         working to enhance the careers of up and coming artists
                     </p>
@@ -361,6 +423,8 @@
     <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script type="text/javascript" src="slick/slick.min.js"></script>
+    <!-- Submit the Form to Google Using "AJAX" -->
+    <script data-cfasync="false" type="text/javascript" src="js/form.js"></script>
     <!-- JavaScript -->
     <script src="js/main.js"></script>
     <script src="js/slider.js"></script>

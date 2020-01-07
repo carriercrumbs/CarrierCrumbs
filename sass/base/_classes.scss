@@ -1,9 +1,10 @@
 // Centers Text
 .text-center { text-align: center; }
-.text-shadow-black { text-shadow: 0px 5px 10px #000; }
+.text-shadow { text-shadow: 0px 5px 10px #000; }
 
 // White Text
 .white-text { color: $color-white !important; }
+.grey-text { color: $color-grey-light !important; }
 .primary-text { color: $primary-color !important; }
 
 .hr-row {
@@ -32,36 +33,18 @@
 }
 
 // Animations
-.fadeLeft-directors-section {
-    animation-name: fadeLeft;
-    animation-duration: .5s;
-    opacity: 1 !important;
-}
-
-.fadeRight-MV {
-    animation-name: fadeRight;
-    animation-duration: .5s;
-    opacity: 1 !important;
-}
-
-
 .fadeIn {
     animation-name: fadeIn;
     animation-duration: .5s;
     opacity: 1 !important;
 }
 
-.fadeUp-about {
+.fadeUp {
     animation-name: fadeUp;
     animation-duration: .5s;
     opacity: 1 !important;
 }
 
-.fadeUp-feature-box {
-    animation-name: fadeUp;
-    animation-duration: .5s;
-    opacity: 1 !important;
-}
 
 .fadeLeft-social-1 {
     animation-name: fadeLeft;
@@ -78,8 +61,19 @@
     animation-duration: .6s;
     opacity: 1 !important;
 }
-.fadeLeft-social-4 {
-    animation-name: fadeLeft;
-    animation-duration: .8s;
-    opacity: 1 !important;
+
+.loading::before {
+    content: "";
+    box-sizing: border-box;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 75px;
+    height: 75px;
+    margin-top: -45px;
+    margin-left: -45px;
+    border-radius: 50%;
+    border-top: 2.5px solid #F7EB94;
+    border-right: 2.5px solid transparent;
+    animation: loadingSpinner 0.7s linear infinite;
 }
